@@ -1,0 +1,85 @@
+
+
+.hero-section {
+    height: 100vh;
+    background-color: #0F0F0F;
+    background-image: url('/assets/images/Texture.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+
+.hero-title {
+    color: white;
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 60px;
+    letter-spacing: -2;
+    width: 90%;
+}
+
+.hero-description {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 28.6px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: white;
+    width: 90%;
+}
+
+.see-more-btn {
+    width: 168px;
+    height: 54px;
+    padding: 16px 40px 16px 40px;
+    border-radius: 24px;
+    border: solid white 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.hero-images{
+    gap: 30px;
+
+    img{
+        max-width: 329px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .hero-section{
+        padding: 20px;
+        padding-top: 100px;
+        height: max-content;
+
+        .hero-title{
+            font-size: 40px;
+        }
+        .see-more-btn{
+            align-self: center;
+        }
+
+        .hero-title, .hero-description {
+            width: 100%;
+            text-align: center;
+        }
+
+        img{
+            max-width: 80%;
+        }
+
+        .hero-images{
+            align-items: center;
+            padding-top: 50px;
+        }
+    
+    }
+  }

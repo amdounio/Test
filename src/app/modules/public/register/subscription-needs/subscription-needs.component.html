@@ -1,0 +1,139 @@
+<section class="login-section">
+    <div class="container">
+        <div class="login-card d-flex flex-column">
+            <div class="row justify-content-center align-items-start ">
+                <div class="col-lg-6 col-sm-12 d-flex flex-column gap-5">
+                    <img src="assets/images/logo.png" class="logo" alt="">
+                    <div>
+                        <p class="title-card m-0">Create an account</p>
+                        <p class="description-card m-0">Help us tailor your experience with a few quick questions.</p>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-4">
+                        
+
+                        <div [formGroup]="form" class="d-flex flex-column align-items-center justify-content-center gap-4 w-100">
+                            
+                            <div class="row g-3 w-100">
+                                <div class="col-md-6">
+                                    <label for="establishmentCapacity" class="form-label">Establishment
+                                        capacity:</label>
+
+                                    <select name="establishmentCapacity" formControlName="establishmentCapacity" aria-placeholder="Sélectionner"
+                                        class="form-control select-box" id="establishmentCapacity">
+                                        <option value="">Establishment capacity</option>
+                                        <option value="50 persons">50 persons</option>
+                                        <option value="100 persons">100 persons</option>
+                                        <option value="150 persons">150 persons</option>
+                                        <option value="200 persons">200 persons</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="sports" class="form-label">Preferred Sports for Broadcast:</label>
+
+                                    <select name="sports" formControlName="sports" aria-placeholder="Sélectionner"
+                                        class="form-control select-box" id="sports">
+                                        <option value="">Select preferred Sports</option>
+                                        <option value="football">football</option>
+                                        <option value="basketball">basketball</option>
+                                        <option value="MMA">MMA</option>
+                                        <option value="Karate">Karate</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 w-100">
+                                <div class="col-md-6">
+                                    <label for="frequencyMatchBroadcasts" class="form-label">Frequency of Match Broadcasts</label>
+
+                                    <select name="frequencyMatchBroadcasts" formControlName="frequencyMatchBroadcasts" aria-placeholder="Sélectionner"
+                                        class="form-control select-box" id="frequencyMatchBroadcasts">
+                                        <option value="">Select preferred Sports</option>
+                                        <option value="1/week">1/week</option>
+                                        <option value="2/week">2/week</option>
+                                        <option value="3/week">3/week</option>
+                                        <option value="4/week">4/week</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="monthlyBudgetEventPromotion" class="form-label">Monthly Budget for Event
+                                        Promotion</label>
+
+                                    <select name="monthlyBudgetEventPromotion" formControlName="monthlyBudgetEventPromotion" aria-placeholder="Sélectionner"
+                                        class="form-control select-box" id="monthlyBudgetEventPromotion">
+                                        <option value="">Select preferred Sports</option>
+                                        <option value="50€ / month">50€ / month</option>
+                                        <option value="100€ / month">100€ / month</option>
+                                        <option value="200€ / month">200€ / month</option>
+                                        <option value="300€ / month">300€ / month</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 w-100">
+                                <div class="col-md-6">
+                                    <label for="mainObjectiveUsing" class="form-label">Main Objective for Using
+                                        AllSports</label>
+
+                                    <select name="mainObjectiveUsing" aria-placeholder="Sélectionner"
+                                        class="form-control select-box" formControlName="mainObjectiveUsing" id="mainObjectiveUsing">
+                                        <option value="">select Main Objective for Using AllSports</option>
+                                        <option value="Increase Attendance During Matches">Increase Attendance During Matches</option>
+                                        <option value="Increase Attendance During Matches">Increase Attendance During Matches</option>
+                                        <option value="Increase Attendance During Matches">Increase Attendance During Matches</option>
+                                        <option value="Increase Attendance During Matches">Increase Attendance During Matches</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="devicesUsedAccess" class="form-label">Devices Used to Access
+                                        AllSports</label>
+
+                                    <select name="devicesUsedAccess" formControlName="devicesUsedAccess" aria-placeholder="Sélectionner"
+                                        class="form-control select-box" id="devicesUsedAccess">
+                                        <option value="">Select preferred Sports</option>
+                                        <option value="Cellphone">Cellphone</option>
+                                        <option value="Tablette">Tablette</option>
+                                        <option value="Laptop">Laptop</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row g-3 w-100">
+                                <div class="col-md-12">
+                                    <label for="commentsSpecificNeeds" class="form-label">Comments or Specific Needs</label>
+
+                                    <textarea name="commentsSpecificNeeds" formControlName="commentsSpecificNeeds"  class="form-control" id="commentsSpecificNeeds"></textarea>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between gap-4 w-100 mt-5">
+                            <button class="btn back-btn" routerLink="/register/choose-plan">Back</button>
+                            <button class="btn next-btn" (click)="submit()">Next</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    @if (images) {
+                    <ngb-carousel>
+                        @for (image of images; track $index) {
+                        <ng-template ngbSlide>
+                            <div class="picsum-img-wrapper">
+                                <img [src]="image" alt="Random first slide" />
+                            </div>
+                            <div class="carousel-caption">
+                                <h3>"Boost your venue's appeal with All Sports.Create stunning match visuals injust a
+                                    few clicks!"</h3>
+                            </div>
+                        </ng-template>
+                        }
+
+
+                    </ngb-carousel>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

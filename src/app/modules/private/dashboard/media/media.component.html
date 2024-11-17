@@ -1,0 +1,55 @@
+<div class="sports-section p-5">
+    <div class="section-head d-flex justify-content-between align-items-center">
+        <div class="d-felx flex-column">
+            <h3 class="title m-0">medias</h3>
+            <p class="sub-title m-0">telecharge ton contenu</p>
+        </div>
+
+    </div>
+    <div class="section-body mt-5">
+        @for (item of mediaList; track $index) {
+        <div class="media-list p-4">
+            <div class="row">
+                <div class="col-1 d-felx flex-column align-items-start justify-content-left ">
+                    <p class="date m-0">{{formtDate(item.Date).dayWeek}}  <br><span>{{formtDate(item.Date).day}}</span><br> {{formtDate(item.Date).month}}</p>
+                </div>
+                <div class="col-11 d-flex flex-column align-items-center justify-content-center gap-4">
+                    @for (media of item.data; track $index) {
+                        @for (files of media.data; track $index) {
+                    <div class="media d-flex align-items-center justify-content-between w-100">
+                        <div class="infos-section d-flex align-items-center justify-content-left gap-5 p-3">
+                            <div class="btn-section d-flex align-items-center gap-2 ">
+                                <button class="btn download-btn" (click)="download(files?.story)">
+                                    <i class="fa-solid fa-download"></i>
+                                    Story
+                                </button>
+                                <button class="btn download-btn" (click)="download(files?.square)">
+                                    <i class="fa-solid fa-download"></i>
+                                    Carré
+                                </button>
+                            </div>
+                                <p class="teams m-0">{{files?.match?.firstTeam?.name}}<br>{{files?.match?.secondTeam?.name}}</p>
+                                @if (files?.match?.status?.long === "Match Finished") {
+                                    <span class="time m-0">{{(files?.match?.periods?.first * 1000) | date:'HH:mm'}} - {{(files?.match?.periods?.second * 1000) | date:'HH:mm'}}</span>
+                                }
+                                @else{
+                                    <span class="time m-0">{{files?.match?.startDate | date:'HH:mm'}} - {{files?.match?.startDate | date:'HH:mm'}}</span>
+                                }
+                        </div>
+
+                        <div class="team-images d-flex gap-3 align-items-center justify-content-center">
+                            <img [src]="files?.match?.firstTeam?.logo" alt="" class="team-image">
+                            <img [src]="files?.match?.secondTeam?.logo" alt="" class="team-image">
+
+                        </div>
+                        <button class="btn trash-btn" (click)="delete(files?.match?.id,media?.user_id,media?.id)"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                }
+                }
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+</div>

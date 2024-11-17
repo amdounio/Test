@@ -1,0 +1,95 @@
+<section class="login-section">
+    <div class="container">
+        <div class="login-card d-flex flex-column">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 d-flex flex-column gap-5">
+                    <img ngOptimizedImage src="assets/images/logo.png" class="logo" alt="">
+                    <div>
+                        <p class="title-card m-0">Create an account</p>
+                        <p class="description-card m-0">Describe yourself as clearly so that there are no mistakes.</p>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-4">
+                        <a href="" class="sso-btn">
+                            <svg width="50px" height="50px" viewBox="-1.5 0 20 20" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <title>apple [#ffffff]</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs> </defs>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="Dribbble-Light-Preview" transform="translate(-102.000000, -7439.000000)"
+                                            fill="#ffffff">
+                                            <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                <path
+                                                    d="M57.5708873,7282.19296 C58.2999598,7281.34797 58.7914012,7280.17098 58.6569121,7279 C57.6062792,7279.04 56.3352055,7279.67099 55.5818643,7280.51498 C54.905374,7281.26397 54.3148354,7282.46095 54.4735932,7283.60894 C55.6455696,7283.69593 56.8418148,7283.03894 57.5708873,7282.19296 M60.1989864,7289.62485 C60.2283111,7292.65181 62.9696641,7293.65879 63,7293.67179 C62.9777537,7293.74279 62.562152,7295.10677 61.5560117,7296.51675 C60.6853718,7297.73474 59.7823735,7298.94772 58.3596204,7298.97372 C56.9621472,7298.99872 56.5121648,7298.17973 54.9134635,7298.17973 C53.3157735,7298.17973 52.8162425,7298.94772 51.4935978,7298.99872 C50.1203933,7299.04772 49.0738052,7297.68074 48.197098,7296.46676 C46.4032359,7293.98379 45.0330649,7289.44985 46.8734421,7286.3899 C47.7875635,7284.87092 49.4206455,7283.90793 51.1942837,7283.88393 C52.5422083,7283.85893 53.8153044,7284.75292 54.6394294,7284.75292 C55.4635543,7284.75292 57.0106846,7283.67793 58.6366882,7283.83593 C59.3172232,7283.86293 61.2283842,7284.09893 62.4549652,7285.8199 C62.355868,7285.8789 60.1747177,7287.09489 60.1989864,7289.62485"
+                                                    id="apple-[#ffffff]"> </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            Continue with Apple
+                        </a>
+                        <asl-google-signin-button id="login-google" type='standard' size='large' logo_alignment="center" theme="filled_black">
+                        </asl-google-signin-button>
+
+                        <form [formGroup]="form" class="w-100">
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-4 w-100">
+                            <div class="d-flex align-items-center justify-content-center gap-4">
+                                <hr class="divider-line m-0  w-100"> <p class="divider-text m-0">or</p> <hr class="divider-line m-0">
+                            </div>
+                            <div class="row g-3 w-100">
+                                <div class="col-md-6">
+                                    <input type="text" formControlName="lastname" placeholder="Votre nom..." class="form-control" id="name">
+                                  </div>
+                                  <div class="col-md-6">
+                                    <input type="text" formControlName="firstname" placeholder="Votre prénom..." class="form-control" id="firstname">
+                                  </div>
+                            </div>
+                            <div class="row g-3 w-100 gap-2">
+                                <div class="col-12">
+                                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="exemple@email.com">
+                                  </div>
+                                  <div class="col-md-12">
+                                      <input type="password" formControlName="password" placeholder="********" class="form-control" id="password">
+                                    </div>
+                            </div>
+                            <div class="gap-2 d-flex justify-content-left align-items-center w-100">
+                                <input type="checkbox" name="accept-legal" formControlName="acceptLegalPolicy" id="accept-legal" class="accept-checkbox"><label class="accept-checkbox-label text-white" for="accept-legal">Yes, I understand and agree to the standley Terms of Service</label>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-4 w-100 mt-3">
+                            <button class="btn submit-btn" (click)="submit()">Create account</button>
+                            <p class="have-account-text">Already have an account ? <a href="">Login</a></p>
+                        </div>
+                    </form>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    @if (images) {
+                        <ngb-carousel>
+                            @for (image of images; track $index) {
+                                <ng-template ngbSlide>
+                                    <div class="picsum-img-wrapper">
+                                        <img ngOptimizedImage [src]="image" alt="Random first slide" />
+                                    </div>
+                                    <div class="carousel-caption">
+                                        <h3>"Boost your venue's appeal with All Sports.Create stunning match visuals injust a few clicks!"</h3>
+                                    </div>
+                                </ng-template>
+                            }
+                            
+                            
+                        </ngb-carousel>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

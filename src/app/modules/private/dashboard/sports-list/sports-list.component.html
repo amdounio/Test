@@ -1,0 +1,54 @@
+<section class="section d-flex flex-column gap-4">
+    <div class="sports-section p-5" >
+        <div class="section-head d-flex justify-content-between align-items-center" (click)="isSportItemSelected = false">
+            <div class="d-felx flex-column">
+                <h3 class="title m-0">sports</h3>
+                <p class="sub-title m-0">choose your discipline</p>
+            </div>
+            <i class="fa-solid fa-chevron-down text-white" *ngIf="isSportItemSelected"></i>
+            <i class="fa-solid fa-chevron-up text-white" *ngIf="!isSportItemSelected"></i>
+        </div>
+        @if (!isSportItemSelected) {
+        <div class="section-body mt-4 w-100">
+            <div class="row gap-3 w-100">
+                @for (item of sportsList; track $index) {
+                <div class="col-lg-3 col-md-6 col-sm-12 sport-item d-flex align-items-end justify-content-between"
+                    (click)="selectSport(item.id)" ngOptimizedImage
+                    [ngStyle]="{'background': 'linear-gradient(270deg,'+ item.firstColorGradientOverlay +' 25.07%,'+ item.secondColorGradientOverlay +' 58.79%),url(' + item.image + ')', 'background-size':'cover'}">
+                    <div class="d-flex flex-column">
+                        <h3 class="title m-0">{{item.title}}</h3>
+                        <p class="sub-title m-0">{{item.subTitle}}</p>
+                    </div>
+                    <button class="btn sport-item-btn">Crée tes visuels</button>
+                </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="sports-section p-5 w-100">
+        <div class="section-head d-flex justify-content-between align-items-center" (click)="isSportItemSelected = false">
+            <div class="d-felx flex-column">
+                <h3 class="title m-0">championnats & coupes</h3>
+                <p class="sub-title m-0">choose your competition</p>
+            </div>
+            <i class="fa-solid fa-chevron-down text-white" *ngIf="!isSportItemSelected"></i>
+            <i class="fa-solid fa-chevron-up text-white" *ngIf="isSportItemSelected"></i>
+        </div>
+        @if (isSportItemSelected) {
+        <div class="section-body mt-4 w-100">
+            <div class="row gap-3 w-100">
+                @for (item of championshipList; track $index) {
+                <div class="col-12 col-lg-3 col-md-6 col-sm-12 championship-item d-flex align-items-end justify-content-end" (click)="selectChampions(item)"
+                    [ngStyle]="{'background': 'linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #0B0B0B 100%),url(' + item.image + ')', 'background-size':'cover'}">
+                    <div class="d-flex flex-column">
+                        <h3 class="title m-0">{{item.title}}</h3>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+</section>

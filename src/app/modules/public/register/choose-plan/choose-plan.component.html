@@ -1,0 +1,201 @@
+<section class="login-section d-flex align-items-center justify-content-center">
+    <div class="custom-container">
+        <div class="login-card d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center">
+                <img ngOptimizedImage src="assets/images/logo.png" class="logo" alt="">
+                <button class="btn back-btn" routerLink="/register/user-description">Back</button>
+            </div>
+            <p class="title-card m-0">Choose your plan</p>
+            <div class="d-flex flex-wrap cards-layout justify-content-between align-items-start">
+                <!-- Free Plan -->
+                <div class="plan-card col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div class="plan-name">Free</div>
+                        <p class="plan-commitment m-0">&nbsp;</p>
+                    </div>
+                    <div class="plan-card-body d-flex flex-column justify-content-center align-items-center gap-4 w-100">
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">3 visuals per month</p>
+                                    <p class="plan-item-description m-0">Create up to 3 personalized visuals every 30 days for your events</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">25 backgrounds</p>
+                                    <p class="plan-item-description m-0">Access a selection of 25 backgrounds to enhance your visuals</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">5 font choices</p>
+                                    <p class="plan-item-description m-0">Customize the text of your visuals with 5 distinct font choices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr width="100%" class="text-white m-0">
+                    <p class="cost-text m-0">0€/<span>month</span></p>
+                    <button (click)="submit(PLANS.FREE)" class="buy-plan-btn">Try Allsports Free</button>
+                </div>
+
+                <!-- Basic Plan -->
+                <div class="plan-card col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div class="plan-name">Basic</div>
+                        <p class="plan-commitment m-0">No-commitment</p>
+                    </div>
+                    <div class="plan-card-body d-flex flex-column justify-content-center align-items-center gap-4 w-100">
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Unlimited Visuals</p>
+                                    <p class="plan-item-description m-0">Create as many custom visuals as you want, without restrictions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Complete catalog of backgrounds</p>
+                                    <p class="plan-item-description m-0">Access a selection of 25 backgrounds to enhance your visuals</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Large selection of fonts</p>
+                                    <p class="plan-item-description m-0">Benefit from a rich selection of fonts to make each visual unique</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr width="100%" class="text-white m-0">
+                    <p class="cost-text m-0">70€/<span>month</span><br><span class="billing-type">Billed monthly</span></p>
+                    <button (click)="submit(PLANS.BASIC)" class="buy-plan-btn">Buy now</button>
+                </div>
+
+                <!-- Pro Plan (Bronze) -->
+                <div class="plan-card col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div class="plan-name bronze-text">Pro</div>
+                        <p class="plan-commitment m-0 bronze-text">with commitment</p>
+                    </div>
+                    <div class="plan-card-body d-flex flex-column justify-content-center align-items-center gap-4 w-100">
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon bronze-text"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Unlimited Visuals</p>
+                                    <p class="plan-item-description m-0">Create as many custom visuals as you want, without restrictions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon bronze-text"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Complete catalog of backgrounds</p>
+                                    <p class="plan-item-description m-0">Access a selection of 25 backgrounds to enhance your visuals</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon bronze-text"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Large selection of fonts</p>
+                                    <p class="plan-item-description m-0">Benefit from a rich selection of fonts to make each visual unique</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bronze-tier d-flex justify-content-center align-items-center">
+                            -15% than Basic
+                        </div>
+                    </div>
+                    <p class="cost-text m-0">60€/<span>month</span><br><span class="billing-type">Billed monthly</span></p>
+                    <button (click)="submit(PLANS.PRO)" class="buy-plan-btn">Buy now</button>
+                </div>
+
+                <!-- Pro Plan (Gold) -->
+                <div class="plan-card col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div class="plan-name gold-text">Business</div>
+                        <p class="plan-commitment m-0 gold-text">Best Plan</p>
+                    </div>
+                    <div class="plan-card-body d-flex flex-column justify-content-center align-items-center gap-4 w-100">
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon gold-text"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Unlimited Visuals</p>
+                                    <p class="plan-item-description m-0">Create as many custom visuals as you want, without restrictions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon gold-text"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Complete catalog of backgrounds</p>
+                                    <p class="plan-item-description m-0">Access a selection of 25 backgrounds to enhance your visuals</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plan-details w-100">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-3 col-md-2 text-center">
+                                    <i class="fa-sharp fa-solid fa-check plan-check-icon gold-text"></i>
+                                </div>
+                                <div class="col-9 col-md-10 d-flex flex-column justify-content-start">
+                                    <p class="plan-item-title m-0">Large selection of fonts</p>
+                                    <p class="plan-item-description m-0">Benefit from a rich selection of fonts to make each visual unique</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gold-tier d-flex justify-content-center align-items-center">
+                            -30% than Basic
+                        </div>
+                    </div>
+                    <p class="cost-text m-0">598€/<span>year</span><br><span class="billing-type">Billed annually</span></p>
+                    <button (click)="submit(PLANS.BUSINESS)" class="buy-plan-btn gold-tier-gradient">Buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

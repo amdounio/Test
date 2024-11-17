@@ -1,0 +1,61 @@
+<section class="login-section">
+    <div class="container">
+        <div class="login-card d-flex flex-column">
+            <div class="row justify-content-center align-items-start ">
+                <div class="col-lg-6 col-sm-12 d-flex flex-column gap-5">
+                    <img src="assets/images/logo.png" class="logo" alt="">
+                    <div>
+                        <p class="title-card m-0">Create an account</p>
+                        <p class="description-card m-0">Help us tailor your experience with a few quick questions.</p>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-4">
+
+                        @if (!sportClicked) {
+                        <div class="d-flex align-items-center justify-content-center flex-wrap gap-4 w-100">
+                            @for (sport of sportsButtons; track $index) {
+                            <button class="btn sports-btn" (click)="sportClicked = true"
+                                [disabled]="sport.disabled">{{sport.name}}</button>
+                            }
+
+                        </div>
+                        }
+                        @if (sportClicked) {
+                        <div class="d-flex align-items-center justify-content-center flex-wrap gap-4 w-100">
+                            @for (sport of leaguesButtons; track $index) {
+                            <button class="btn sports-btn" [ngClass]="{'selected': isSelected(sport)}" (click)="selectLeagues(sport)" [disabled]="sport.disabled">{{sport.name}}</button>
+                            }
+
+                        </div>
+                        }
+
+                        <div class="d-flex align-items-center justify-content-between gap-4 w-100 mt-5">
+                            <button class="btn back-btn" routerLink="/register/subscription-needs">Back</button>
+                            <button class="btn next-btn" (click)="submit()">Next</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    @if (images) {
+                    <ngb-carousel>
+                        @for (image of images; track $index) {
+                        <ng-template ngbSlide>
+                            <div class="picsum-img-wrapper">
+                                <img [src]="image" alt="Random first slide" />
+                            </div>
+                            <div class="carousel-caption">
+                                <h3>"Boost your venue's appeal with All Sports.Create stunning match visuals injust a
+                                    few clicks!"</h3>
+                            </div>
+                        </ng-template>
+                        }
+
+
+                    </ngb-carousel>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

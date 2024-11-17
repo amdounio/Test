@@ -1,0 +1,64 @@
+<div class="bg-dark modal-section">
+    <div class="container">
+        <div class="modal-header">
+            <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+        </div>
+        <div class="modal-body">
+            <div class="sports-section p-5 mt-5">
+                <div class="section-head d-flex justify-content-between align-items-center">
+                    <div class="d-felx flex-column">
+                        <h3 class="title m-0">Ligue 1</h3>
+                        <p class="sub-title m-0">personnalise tes affiches</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-left gap-3">
+                        <div ngbDropdown class="d-inline-block">
+                            <button type="button" class="btn secondary-btn" id="dropdownForm1" ngbDropdownToggle>
+                                {{filterDropDownLabel}}
+                            </button>
+                            <div ngbDropdownMenu class="filter-menu" aria-labelledby="dropdownForm1">
+                                <ul class="filter-list">
+                                    @for (item of backgoundCategorieList; track $index) {
+                                    <li>
+                                        <label
+                                            class="btn match-btn d-flex align-items-center justify-content-between p-3">
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div class="d-flex flex-column gap-2">
+                                                    <span class="team-name">{{item?.name}}</span>
+                                                </div>
+                                            </div>
+                                            <input type="checkbox" class="checkbox" (change)="filterBackground(item)">
+
+                                        </label>
+                                    </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn next-btn" (click)="close()">Next</button>
+                    </div>
+
+
+                </div>
+                <div class="section-body d-flex align-items-center justify-content-center flex-wrap gap-4 mt-5">
+                    
+                    @for (item of backgroundList; track $index) {
+                        <label ngOptimizedImage class="btn background-btn d-flex align-items-start justify-content-end p-3" [ngStyle]="{'background': 'url(' + item.image + ')', 'background-size':'cover'}"                        >
+                            <input type="checkbox" class="checkbox"  [checked]="isBackgroundSelected(item)" (change)="seclectBackground(item)">
+    
+                        </label>
+                    }
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+        </div> -->
+
+    </div>
+
+</div>

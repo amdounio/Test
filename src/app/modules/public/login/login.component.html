@@ -1,0 +1,125 @@
+<section class="login-section">
+    <div class="container">
+        <div class="login-card d-flex flex-column">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 d-flex flex-column gap-5">
+                    <img ngOptimizedImage src="assets/images/logo.png" class="logo" alt="">
+                    <div>
+                        <p class="title-card m-0">Welcome back</p>
+                        <p class="description-card m-0">Enter your email and password to access your account</p>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-4">
+
+                        <div   [formGroup]="form" class="d-flex flex-column align-items-center justify-content-center gap-4 w-100">
+                            <!-- <div class="d-flex align-items-center justify-content-center gap-4">
+                                <hr class="divider-line m-0"> <p class="divider-text m-0">or</p> <hr class="divider-line m-0">
+                            </div> -->
+                            
+                            <div class="row g-3 w-100 gap-2">
+                                <div class="col-12 p-0">
+                                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="exemple@email.com">
+                                  </div>
+                                  <div class="col-md-12 p-0">
+                                      <input type="password" formControlName="password" placeholder="********" class="form-control" id="password">
+                                    </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                                <div class="gap-2 d-flex justify-content-left align-items-center">
+                                    <input type="checkbox" formControlName="rememberMe" name="accept-legal" id="accept-legal" class="accept-checkbox"><label class="accept-checkbox-label text-white" for="accept-legal">Remember me</label>
+                                </div>
+                                <a href="" class="forgot-password-link m-0">Forgot password</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-center justify-content-center gap-4 w-100 mt-3">
+                            <button class="btn submit-btn" (click)="submit()">Sign in</button>
+                            <a (click)="appleSign()" class="sso-btn">
+                                <svg width="50px" height="50px" viewBox="-1.5 0 20 20" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title>apple [#ffffff]</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs> </defs>
+                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Dribbble-Light-Preview" transform="translate(-102.000000, -7439.000000)"
+                                                fill="#ffffff">
+                                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                    <path
+                                                        d="M57.5708873,7282.19296 C58.2999598,7281.34797 58.7914012,7280.17098 58.6569121,7279 C57.6062792,7279.04 56.3352055,7279.67099 55.5818643,7280.51498 C54.905374,7281.26397 54.3148354,7282.46095 54.4735932,7283.60894 C55.6455696,7283.69593 56.8418148,7283.03894 57.5708873,7282.19296 M60.1989864,7289.62485 C60.2283111,7292.65181 62.9696641,7293.65879 63,7293.67179 C62.9777537,7293.74279 62.562152,7295.10677 61.5560117,7296.51675 C60.6853718,7297.73474 59.7823735,7298.94772 58.3596204,7298.97372 C56.9621472,7298.99872 56.5121648,7298.17973 54.9134635,7298.17973 C53.3157735,7298.17973 52.8162425,7298.94772 51.4935978,7298.99872 C50.1203933,7299.04772 49.0738052,7297.68074 48.197098,7296.46676 C46.4032359,7293.98379 45.0330649,7289.44985 46.8734421,7286.3899 C47.7875635,7284.87092 49.4206455,7283.90793 51.1942837,7283.88393 C52.5422083,7283.85893 53.8153044,7284.75292 54.6394294,7284.75292 C55.4635543,7284.75292 57.0106846,7283.67793 58.6366882,7283.83593 C59.3172232,7283.86293 61.2283842,7284.09893 62.4549652,7285.8199 C62.355868,7285.8789 60.1747177,7287.09489 60.1989864,7289.62485"
+                                                        id="apple-[#ffffff]"> </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                Continue with Apple
+                            </a>
+                            <!-- <label id="label-google"  class="sso-btn">
+                                <svg width="50px" height="50px" viewBox="0 0 20 20" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title>google [#ffffff]</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs> </defs>
+                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7399.000000)"
+                                                fill="#ffffff">
+                                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                    <path
+                                                        d="M263.821537,7247.00386 L254.211298,7247.00386 C254.211298,7248.0033 254.211298,7250.00218 254.205172,7251.00161 L259.774046,7251.00161 C259.560644,7252.00105 258.804036,7253.40026 257.734984,7254.10487 C257.733963,7254.10387 257.732942,7254.11086 257.7309,7254.10986 C256.309581,7255.04834 254.43389,7255.26122 253.041161,7254.98137 C250.85813,7254.54762 249.130492,7252.96451 248.429023,7250.95364 C248.433107,7250.95064 248.43617,7250.92266 248.439233,7250.92066 C248.000176,7249.67336 248.000176,7248.0033 248.439233,7247.00386 L248.438212,7247.00386 C249.003881,7245.1669 250.783592,7243.49084 252.969687,7243.0321 C254.727956,7242.65931 256.71188,7243.06308 258.170978,7244.42831 C258.36498,7244.23842 260.856372,7241.80579 261.043226,7241.6079 C256.0584,7237.09344 248.076756,7238.68155 245.090149,7244.51127 L245.089128,7244.51127 C245.089128,7244.51127 245.090149,7244.51127 245.084023,7244.52226 L245.084023,7244.52226 C243.606545,7247.38565 243.667809,7250.75975 245.094233,7253.48622 C245.090149,7253.48921 245.087086,7253.49121 245.084023,7253.49421 C246.376687,7256.0028 248.729215,7257.92672 251.563684,7258.6593 C254.574796,7259.44886 258.406843,7258.90916 260.973794,7256.58747 C260.974815,7256.58847 260.975836,7256.58947 260.976857,7256.59047 C263.15172,7254.63157 264.505648,7251.29445 263.821537,7247.00386"
+                                                        id="google-[#ffffff]"> </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                Continue with Google
+                            </label> -->
+                            <asl-google-signin-button id="login-google" type='standard' size='large' logo_alignment="center" theme="filled_black">
+                            </asl-google-signin-button>
+
+                            
+                            <p class="have-account-text">Don’t have an account ? <a routerLink="/register">Sign up</a></p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    @if (images) {
+                        <ngb-carousel>
+                            @for (image of images; track $index) {
+                                <ng-template ngbSlide>
+                                    <div class="picsum-img-wrapper">
+                                        <img ngOptimizedImage [src]="image" alt="Random first slide" />
+                                    </div>
+                                    <div class="carousel-caption">
+                                        <h3>"Boost your venue's appeal with All Sports.Create stunning match visuals injust a few clicks!"</h3>
+                                    </div>
+                                </ng-template>
+                            }
+                            
+                            
+                        </ngb-carousel>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    let label_google = document.getElementById('label-google');
+    let google_btn = document.getElementById('login-google');
+    label_google.addEventListener('click',()=>{
+        google_btn.click()
+    })
+</script>

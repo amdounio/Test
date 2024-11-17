@@ -1,0 +1,12 @@
+<div class="container-fluid d-flex flex-column p-2 gap-4">
+    @for (item of sportsList; track $index) {
+        <div class="sport-card d-flex justify-content-end align-items-center w-100 "  [ngStyle]="{'background-image': 'url(' + item.image + ')'}" [ngClass]="{'disabled-card' : item.disabled}">
+            <div class="card-content d-flex flex-column align-items-start justify-content-center gap-3">
+                <h3 class="card-title">{{item.title}}</h3>
+                <p class="card-description">{{item.description}}</p>
+                <button class="btn card-btn" (click)="selectLeague(item)">Crée tes visuels</button>
+            </div>
+        </div>
+    }
+    
+</div>
